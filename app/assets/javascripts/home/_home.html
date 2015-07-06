@@ -1,0 +1,142 @@
+
+<center>
+  <h2>SIMPLE TODO LISTS</h2>
+  <h4>FROM RUBY GARAGE</h4>
+</center>
+
+  <div ng-repeat="list in lists">   
+    <div class = "row">
+    
+      <div class = "row">
+        <div class="col-lg-12">
+
+        <div class="tab_header">
+        <div class="row">
+          <div class="col-lg-1">
+            <span class = "glyphicon glyphicon-calendar"> </span>
+          </div>
+          <form ng-submit="updateList(list, title)">
+            <div ng-hide="ListEditorEnabled">
+              <div class="col-lg-9">
+                {{list.title}}
+              </div>
+              <div class="col-lg-1">
+                <button ng-click="ListEditorEnabled=!ListEditorEnabled" class="sendsubmit">
+                  <span class="glyphicon glyphicon-pencil"></span>
+                </button>  
+              </div>
+              <div class="col-lg-1">
+                <span class="glyphicon glyphicon-remove"  ng-click="deleteList(list)"></span>
+              </div>
+            </div>
+            <div ng-show="ListEditorEnabled">
+              <div class="col-lg-9">
+                <input type="text" placeholder="New list name" ng-model="title" class="form-control"></input>
+              </div>
+              <div class="col-lg-1">
+                <button type="submit" class="sendsubmit"><span class="glyphicon glyphicon-ok"></span></button> 
+              </div>   
+            </div>
+          </form>
+        </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="task">
+      <div class="row">
+      
+        <form ng-submit="addTask(list, body)" style="margin-top:13px;">
+        <div class="col-lg-1">
+          <span class="glyphicon glyphicon-plus"></span>
+        </div>
+        <div class="col-lg-9">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Task" ng-model="body"></input>
+          </div>
+        </div>
+        <div class="col-lg-2">
+          <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+        </form>
+
+      </div></div>
+      <div class="tab1">
+      <div ng-repeat="task in list.tasks | orderBy:'-upvotes'">
+      <div class="task_line">
+        <div class="row">
+          
+          <div class="col-lg-1">
+            <input type="checkbox" ng-model="deleted">
+          </div>
+          <div class="col-lg-10">
+            
+              <div class="task_body">
+                <form ng-submit="updateTask(list, task, body)">
+                  <div ng-hide="editorEnabled">
+                    <div class="col-lg-10">
+                    <span ng-class="{strike: deleted}">
+                      {{task.body}}
+                    </span>
+                    </div>
+                    <div class="col-lg-2">
+                      <span class="glyphicon glyphicon-chevron-up" ng-click="incrementUpvotes(list, task)"></span>
+                      <span class="glyphicon glyphicon-chevron-down" ng-click="decrementUpvotes(list, task)"></span>
+                    
+                      <button ng-click="editorEnabled=!editorEnabled" class="sendsubmit">
+                        <span class="glyphicon glyphicon-edit"></span>
+                      </button>
+                    </div>
+                  </div>
+                  <div ng-show="editorEnabled">
+                    <div class="col-lg-11">
+                      <input type="text" placeholder="New task name" ng-model="body" class="form-control"></input>
+                    </div>
+                    <div class="col-lg-1">
+                      <button type="submit" class="sendsubmit"><span class="glyphicon glyphicon-ok"></span></button>
+                    </div>
+                  </div>
+                </form>
+                
+              </div>
+            
+          </div>
+          
+          <div class="col-lg-1">
+            <span class="glyphicon glyphicon-trash"  ng-click="deleteTask(list, task)"></span>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    
+      <form ng-submit="addList()" style="margin-top:30px;">
+      
+        <div ng-hide="Enabled">   
+          <div class="col-lg-4">
+          </div>          
+          <div class="col-lg-4">  
+            <button ng-click="Enabled=!Enabled" class="btn btn-primary" id="new_list_button">Add TODO List</button>
+          </div>
+          <div class="col-lg-4">
+          </div>
+        </div>
+                 
+        <div ng-show="Enabled">              
+          
+          <div class="col-lg-10">
+            <input type="text" class="form-control" placeholder="New list" ng-model="title"></input>         
+          </div>
+          <div class="col-lg-2">
+            <button type="submit" class="btn btn-primary" ng-click="Enabled=!Enabled" >Add</button>
+          </div>
+        </div>
+      
+      </form>
+
+  </div>

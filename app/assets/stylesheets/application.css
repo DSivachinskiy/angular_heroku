@@ -1,0 +1,112 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *= require bootstrap/dist/css/bootstrap
+ *= require_tree .
+ *= require_self
+ */
+html, body{
+	height: 100%;
+}
+body {
+	 background: linear-gradient(#A9A9A9, #FFA500);
+	background-repeat:no-repeat; 
+	background-attachment:fixed; 
+
+}
+ .strike {
+    text-decoration: line-through;
+}
+.tab1{
+	background-color: #eeeeee;
+	margin-bottom: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-style: groove; 
+
+}
+.tab_header {
+	background-color: #4876FF;
+	font-size: 20px;
+	padding: 5px;
+	border-style: solid; 
+	border-width: 1px;
+	color: white;
+	border-color: black;
+	margin-top: 30px;
+}
+.glyphicon.glyphicon-plus {
+    font-size: 27px;
+    color: green;
+    margin-left: 15px;
+}
+.glyphicon.glyphicon-calendar{
+	color: black;
+}
+.task{
+	background-color: #dddddd;
+	border-style: solid;
+	border-width: 1px;
+}
+.btn.btn-primary{
+	margin-left: 0;
+	padding-left: 0;
+	width: 90%;
+}
+.task_line {
+	border-bottom-style: solid;
+	border-width: 1px;
+	border-color: #dddddd;
+}
+.task_body{
+  
+  font-size: 20px;
+  padding-left: 10px;
+}
+.glyphicon.glyphicon-chevron-up{
+	font-size: 10px;
+	cursor: pointer; 
+	cursor: hand; 
+}
+.glyphicon.glyphicon-chevron-down{
+	font-size: 10px;
+	cursor: pointer; 
+	cursor: hand; 
+}
+.glyphicon.glyphicon-trash{
+	font-size: 20px;
+	cursor: pointer; 
+	cursor: hand; 
+
+}
+.glyphicon.glyphicon-remove{
+	font-size: 20px;
+	cursor: pointer; 
+	cursor: hand; 
+}
+.sendsubmit {
+
+border: 0;
+margin-left: 15px;
+padding:0;
+width: 0px; // длина кнопки
+height: 0px; // высота кнопки
+
+cursor: pointer; 
+cursor: hand; 
+}
+.header_message{
+	background-color: #4EEE94;
+	margin-top: 10px;
+	border-radius: 8px;
+	padding: 5px;
+	font-weight: 600;
+}

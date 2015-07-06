@@ -1,0 +1,13 @@
+<div ng-controller="NavCtrl">
+  <ul class="nav navbar-nav">
+    <li ng-hide="signedIn()">
+      <div class="header_message">	
+    	Please login or register to make changes
+      </div>
+    </li>
+    <li ng-hide="signedIn()"><a href="#/login">Log In</a></li>
+    <li ng-hide="signedIn()"><a href="#/register">Register</a></li>
+    <li ng-show="signedIn()"><a href="#/">{{ user.username }}</a></li>
+    <li ng-show="signedIn()"><a ng-click="logout()">Log Out</a></li>
+  </ul>
+</div>
