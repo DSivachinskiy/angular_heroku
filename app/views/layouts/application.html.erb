@@ -8,21 +8,26 @@
 </head>
 <body ng-app="Todo">
   <div class="row">
-    <div class="col-xs-4"></div>
+    <div class="col-lg-4"></div>
     
-    <div class="col-xs-7">
+    <div class="col-lg-7">
       <div ng-include="'nav/_nav.html'"></div>
+      <%unless signed_in?%>
+      
+        <%=link_to image_tag("facebook.png", height: 40), user_omniauth_authorize_path(:facebook),id: 'facebook_link' %> 
+
+      <%end%>
     </div>
-    <div class="col-xs-1"></div>
+    <div class="col-lg-1"></div>
     
     </div>
   <div class="row">
-    <div class="col-xs-3"></div>
+    <div class="col-lg-3"></div>
     
-    <div class="col-xs-6">
+    <div class="col-lg-6">
       <ui-view></ui-view>
     </div>
-    <div class="col-xs-3"></div>
+    <div class="col-lg-3"></div>
    
   </div>
     

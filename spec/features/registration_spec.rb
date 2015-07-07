@@ -1,6 +1,6 @@
 
 require 'rails_helper'
- 
+ include OmniauthHelper
 feature "Registration", js: true do
   scenario "Visitor registers successfully via register form" do
     visit '#/register'
@@ -26,5 +26,12 @@ feature "Registration", js: true do
     click_button('Register')
     expect(page).not_to have_content 'Log Out'
     
+  end
+   scenario 'login via facebook' do
+    visit '#/home'
+
+   set_omniauth
+    click_link 'facebook_link'
+    expect(page).to have_content 'Log Out'
   end
 end

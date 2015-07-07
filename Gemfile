@@ -22,6 +22,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',        group: :doc
 gem 'angular-rails-templates'
 gem 'angular_rails_csrf'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-oauth2'
+gem 'cancancan'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',      group: :development
 gem 'devise', '~> 3.4.0'

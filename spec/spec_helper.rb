@@ -12,7 +12,7 @@ require 'factory_girl_rails'
 require 'database_cleaner'
 require 'rspec/collection_matchers'
 require 'rspec/expectations'
-
+require 'ability_spec_helper'
 require 'support/factories'
 
 

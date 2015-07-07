@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-	before_filter :authenticate_user!, only: [:create, :upvote, :destroy, :update]
+	load_and_authorize_resource
 
   def create
     list = List.find(params[:list_id])

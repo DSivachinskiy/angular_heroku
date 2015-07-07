@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-	before_filter :authenticate_user!, only: [:create, :upvote, :destroy]
+	load_and_authorize_resource
 	def index
     respond_with List.all
   end
